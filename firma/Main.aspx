@@ -29,7 +29,7 @@
                     <asp:ListItem Text="Serwisant" />
                 </asp:DropDownList>
                 <asp:Label Text="Data zgłoszenia" runat="server" />
-                <input runat="server" readonly="readonly" type="date" enabled="false" id="dateSubmitted" />
+                <input runat="server" readonly="readonly" class="shortInput" type="text" enabled="false" id="dateSubmitted" />
                 <br>
                 <asp:Label Text="Numer telefonu" runat="server" />
                 <input type="number" id="phoneNumber" runat="server" />
@@ -37,7 +37,7 @@
                 <input type="email" id="email" runat="server" />
                 <br>
                 <br>
-                <asp:Button runat="server" OnClick="Unnamed_Click" Text="Dodaj praktykanta" /><br>
+                <asp:Button runat="server" Class="button" OnClick="Unnamed_Click" Text="Dodaj praktykanta" /><br>
                 <br>
             </div>
             <asp:GridView AutoGenerateColumns="false" ID="gridView1" runat="server">
@@ -46,7 +46,7 @@
                     <asp:BoundField DataField="firstName" HeaderText="Imie" />
                     <asp:BoundField DataField="lastName" HeaderText="Nazwisko" />
                     <asp:BoundField DataField="desiredPosition" HeaderText="Stanowisko" />
-                    <asp:BoundField DataField="dateSubmitted" HeaderText="Data wysłania" />
+                    <asp:BoundField DataField="dateSubmitted" DataFormatString="{0:dd-MM-yyyy}" HeaderText="Data wysłania" />
                     <asp:BoundField DataField="phoneNumber" HeaderText="Numer telefonu" />
                     <asp:BoundField DataField="email" HeaderText="E-MAIL" />
                 </Columns>

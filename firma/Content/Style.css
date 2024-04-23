@@ -15,10 +15,11 @@ body {
 
 /* Stylowanie nagłówka */
 .headerMenu {
-    background-image: url("Images/BlackGlassHeader.jpg");
+    background-color: darkslategray;
     color: #fff;
-    text-align:left;
-    font-size: 1.5em;
+    text-align: left;
+    font-size: 1.7em;
+    padding: 15px;
 }
 
 /* Stylowanie sekcji formularza */
@@ -58,19 +59,26 @@ select {
 }
 
 /* Stylowanie przycisku */
-button {
+.button {
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 1.3em;
     cursor: pointer;
     border-radius: 5px;
+    background-color: darkslategray;
 }
 
-    button:hover {
-        background-color: #0056b3;
+    .button:hover {
+        background-color: lightseagreen;
     }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
 
 /* Stylowanie tabeli */
 table {
@@ -99,7 +107,7 @@ td {
 
     /* Stylowanie GridView - nagłówek */
     #gridView1 th {
-        background-color: #007bff;
+        background-color: darkslategray;
         color: #fff;
         padding: 10px;
         text-align: left;
@@ -109,6 +117,10 @@ td {
     #gridView1 td {
         padding: 10px;
     }
+
+.shortInput {
+    width: 120px;
+}
 
 /* Responsywne style */
 @media (max-width: 600px) {
