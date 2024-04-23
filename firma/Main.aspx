@@ -1,6 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Main.aspx.cs" Inherits="Main" %>
-
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -39,6 +37,7 @@
                 <br>
                 <asp:Button runat="server" Class="button" OnClick="Unnamed_Click" Text="Dodaj praktykanta" /><br>
                 <br>
+                <span  runat="server" id="alertSpan" class="alertSpan"></span>
             </div>
             <asp:GridView AutoGenerateColumns="false" ID="gridView1" runat="server">
                 <Columns>
@@ -49,6 +48,12 @@
                     <asp:BoundField DataField="dateSubmitted" DataFormatString="{0:dd-MM-yyyy}" HeaderText="Data wysłania" />
                     <asp:BoundField DataField="phoneNumber" HeaderText="Numer telefonu" />
                     <asp:BoundField DataField="email" HeaderText="E-MAIL" />
+                    <asp:TemplateField HeaderText="Działanie">
+                        <ItemTemplate>
+                            <asp:Button runat="server" Class="button" OnClick="Unnamed_Click1" Text="Edytuj" />
+                            <asp:Button runat="server" Class="button" OnClick="Unnamed_Click2" Text="Usuń" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
         </form>

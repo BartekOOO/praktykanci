@@ -18,6 +18,8 @@ public partial class Main : System.Web.UI.Page {
             DateTime data = DateTime.Now;
             dateSubmitted.Value = data.Day + "-" + data.Month + "-" + data.Year;
         }
+        alertSpan.Visible = false;
+        alertSpan.InnerText = "Aby dodać nowego praktykanta uzupełnij jego dane";
     }
 
     protected void Unnamed_Click(object sender, EventArgs e)
@@ -32,18 +34,42 @@ public partial class Main : System.Web.UI.Page {
         DateTime dateSubmittedStr = DateTime.Parse(dateSubmitted.Value);
         string phoneNumberStr = phoneNumber.Value;
         string emailStr = email.Value;
+        if (!String.IsNullOrEmpty(firstNameStr)&&!String.IsNullOrEmpty(lastNameStr)&&!String.IsNullOrEmpty(phoneNumberStr)&&!String.IsNullOrEmpty(emailStr)) {
+            lista.Add(new Apprentices(index, firstNameStr, lastNameStr, desiredPositionStr, dateSubmittedStr, phoneNumberStr, emailStr));
+            index++;
 
-        lista.Add(new Apprentices(index,firstNameStr,lastNameStr,desiredPositionStr,dateSubmittedStr,phoneNumberStr,emailStr));
-        index++;
+            gridView1.DataSource = lista;
+            gridView1.DataBind();
 
-        gridView1.DataSource = lista;
-        gridView1.DataBind();
+            firstName.Text = null;
+            lastName.Text = null;
+            desiredPosition.SelectedIndex = 0;
+            phoneNumber.Value = null;
+            email.Value = null;
 
-        firstName.Text = null;
-        lastName.Text = null;
-        desiredPosition.SelectedIndex = 0;
-        phoneNumber.Value = null;
-        email.Value = null;
+            alertSpan.Visible = false;
+        }
+        else
+        {
+            alertSpan.Visible = true;
+        }
+    }
+
+    protected void Unnamed_Click1(object sender, EventArgs e)
+    {
+        Button btn = (Button)sender;
+        GridViewRow row = (GridViewRow)btn.NamingContainer;
+        int index = row.RowIndex;
+
+        firstName.Text = gridView1.Rows[index].Cells[1].Text;
+    }
+
+    protected void Unnamed_Click2(object sender, EventArgs e)
+    {
+        Button btn = (Button )sender;
+        GridViewRow row = (GridViewRow)btn.NamingContainer;
+        int index = row.RowIndex;
+
 
     }
 }

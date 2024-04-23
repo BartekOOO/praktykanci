@@ -136,3 +136,7 @@ td {
         width: 100%;
     }
 }
+
+.alertSpan{
+    color:darkred;
+}
