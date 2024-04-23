@@ -13,6 +13,7 @@ public partial class Main : System.Web.UI.Page {
     protected void Page_Load(object sender, EventArgs e)
     {
         gridView1.DataSource = lista;
+        
         gridView1.DataBind();
     }
 
@@ -27,5 +28,8 @@ public partial class Main : System.Web.UI.Page {
 
         lista.Add(new Apprentices(index,firstNameStr,lastNameStr,desiredPositionStr,new DateTime(),phoneNumberStr,emailStr));
         index++;
+
+
+
     }
 }

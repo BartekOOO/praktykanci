@@ -1,0 +1,126 @@
+﻿/* Resetowanie domyślnych stylów dla elementów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stylowanie body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Stylowanie nagłówka */
+.headerMenu {
+    background-image: url("Images/BlackGlassHeader.jpg");
+    color: #fff;
+    text-align:left;
+    font-size: 1.5em;
+}
+
+/* Stylowanie sekcji formularza */
+.panel {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    /* Stylowanie nagłówka formularza */
+    .panel h2 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+/* Stylowanie etykiet */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Stylowanie pola tekstowego */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+select {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Stylowanie przycisku */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+/* Stylowanie tabeli */
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Stylowanie nagłówka tabeli */
+th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Stylowanie komórek tabeli */
+td {
+    padding: 10px;
+}
+
+/* Stylowanie GridView */
+#gridView1 {
+    margin-top: 20px;
+    width: 100%;
+}
+
+    /* Stylowanie GridView - nagłówek */
+    #gridView1 th {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* Stylowanie GridView - komórki */
+    #gridView1 td {
+        padding: 10px;
+    }
+
+/* Responsywne style */
+@media (max-width: 600px) {
+    .panel {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    select {
+        width: 100%;
+    }
+}
