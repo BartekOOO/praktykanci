@@ -28,7 +28,7 @@
                     <asp:ListItem Text="Serwisant" />
                 </asp:DropDownList>
                 <asp:Label Text="Data zgłoszenia" runat="server" />
-                <input runat="server" readonly="readonly" class="shortInput" type="text" enabled="false" id="dateSubmitted" />
+                <asp:TextBox runat="server" ReadOnly="true" class="shortInput" enabled="false" id="dateSubmitted" />
                 <br>
                 <asp:Label Text="Numer telefonu" runat="server" />
                 <asp:TextBox TextMode="Number" ID="phoneNumber" runat="server" />
@@ -54,6 +54,8 @@
                 </asp:DropDownList>
                 <asp:Label Visible="false" ID="editId" runat="server" />
                 <asp:Label Visible="false" ID="dbId" runat="server" />
+                <asp:Label Text="Data" runat="server" />
+                <asp:TextBox Width="200" runat="server" TextMode="Date" ID="dateSubmittedEd"/>
                 <asp:Label Text="Numer" runat="server" />
                 <asp:TextBox TextMode="Number" Width="200" ID="phoneNumberEd" runat="server" />
                 <asp:Label Text="E-mail" runat="server" />
@@ -64,11 +66,11 @@
             <asp:GridView AutoGenerateColumns="false" ID="gridView1" runat="server">
                 <Columns>
                     <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Lp." DataField="index" />
-                    <asp:BoundField Visible="false" DataField="id" />
+                    <asp:BoundField Visible="true"  DataField="id" HeaderText="Id"/>
                     <asp:BoundField DataField="firstName" HeaderText="Imie" />
                     <asp:BoundField DataField="lastName" HeaderText="Nazwisko" />
                     <asp:BoundField DataField="desiredPosition" HeaderText="Stanowisko" />
-                    <asp:BoundField DataField="dateSubmitted" DataFormatString="{0:dd-MM-yyyy}" HeaderText="Data wysłania" />
+                    <asp:BoundField DataField="dateSubmitted" HeaderText="Data wysłania" />
                     <asp:BoundField DataField="phoneNumber" HeaderText="Numer telefonu" />
                     <asp:BoundField DataField="email" HeaderText="E-MAIL" />
                     <asp:TemplateField HeaderText="Działanie">
