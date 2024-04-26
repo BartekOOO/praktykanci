@@ -13,7 +13,8 @@ public class Functions
 
     public static string dataToString(DateTime date)
     {
-        return date.Day.ToString()+"."+date.Month.ToString()+"."+date.Year.ToString()+" 00:00:00";
+        return date.Day.ToString("00") + "-" + date.Month.ToString("00") + "-" + date.Year.ToString();
+
     }
 
     public static ObservableCollection<Apprentices> getDataFromDataBase()

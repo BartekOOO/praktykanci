@@ -60,17 +60,20 @@
                 <asp:TextBox TextMode="Number" Width="200" ID="phoneNumberEd" runat="server" />
                 <asp:Label Text="E-mail" runat="server" />
                 <asp:TextBox Width="200" TextMode="Email" ID="emailEd" runat="server" />
+                <br>
+                <span runat="server" id="alertSpan1" class="alertSpan"></span>
+                <br>
                 <asp:Button runat="server" CssClass="button"  Text="Aktualizuj" OnClick="Unnamed_Click3"/>
                 <asp:Button runat="server" CssClass="button" Text="Anuluj" OnClick="Unnamed_Click4"/>
             </asp:Panel>
             <asp:GridView AutoGenerateColumns="false" ID="gridView1" runat="server">
                 <Columns>
                     <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderText="Lp." DataField="index" />
-                    <asp:BoundField Visible="true"  DataField="id" HeaderText="Id"/>
+                    <asp:BoundField Visible="false"/>
                     <asp:BoundField DataField="firstName" HeaderText="Imie" />
                     <asp:BoundField DataField="lastName" HeaderText="Nazwisko" />
                     <asp:BoundField DataField="desiredPosition" HeaderText="Stanowisko" />
-                    <asp:BoundField DataField="dateSubmitted" HeaderText="Data wysłania" />
+                    <asp:BoundField DataField="dateSubmitted" DataFormatString="{0:dd-MM-yyyy}" HeaderText="Data wysłania" />
                     <asp:BoundField DataField="phoneNumber" HeaderText="Numer telefonu" />
                     <asp:BoundField DataField="email" HeaderText="E-MAIL" />
                     <asp:TemplateField HeaderText="Działanie">
