@@ -1,0 +1,2 @@
+Aby strona poprawnie działała, w projekcie, w pliku Web.config należy wskazać nazwę serwera i nazwę bazy danych
+Zamieszczam dodatkowy export bazy danych z przykładowymi praktykantami dla testu, bazę danych stworzyłem w SQL Manager Studio
